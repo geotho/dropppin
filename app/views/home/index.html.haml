@@ -1,0 +1,22 @@
+#todos
+  %h1 Droppp.in
+  #settings
+  .inner
+    -# = form_for(:place, :remote => true) do |f|
+    -#   = f.hidden_field :session_id
+    -#   = f.text_field :name, :placeholder => "Add location"
+    %input#place_name{:type => "text", :placeholder => "Add location"}
+    %section
+      = render "places/index"
+    %a#clearLink{:href => "#"}
+      Clear all
+    %a#clearDone{:href => "#"}
+      Clear done
+    %em
+      Search for places you'd like to go, add them to your list and we'll remember them next time you visit.
+
+#map_canvas
+
+%script{:type => "text/javascript",
+    :src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyAhA2lQUp1m0vfXRCUXQcAJgKaiC99mwwQ&sensor=false&libraries=places"}
+

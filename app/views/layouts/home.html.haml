@@ -1,0 +1,11 @@
+!!! 5
+%html
+  %head
+    %title 
+      Dropppin
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Roboto:300,400,500", media: "all"
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    = yield

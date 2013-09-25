@@ -1,0 +1,168 @@
+$dark-grey: #828887
+$light-blue-grey: #566e7b
+
+@mixin border-radius($rad)
+  border-radius: $rad
+  -webkit-border-radius: $rad
+
+*, *:before, *:after
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+
+body 
+  margin: 0
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+  font-size: 0.875em
+  font-weight: bold
+
+html, body
+  height: 100%
+
+a
+  text-decoration: none
+
+input
+  font-size: 100%
+  font-weight: bold
+  padding: 10px
+  outline: none
+  border: none
+  @include border-radius(3px)
+  border: 1px solid #cdcdcd
+  margin: 0
+  z-index: 100
+  width: 100%
+  color: $dark-grey
+  background: url(cross.png) no-repeat 95% 50%
+  &:focus
+    outline: none
+
+#settings
+  background: $light-blue-grey url(list.png) 50% 50% no-repeat
+  position: absolute
+  top: 10px
+  right: 15px
+  @include border-radius(3px)
+  border: 1px solid #334b58
+  -webkit-box-shadow: inset 0px 1px 2px 0px rgba(255, 255, 255, 0.1), 0px 1px 2px 0px rgba(0, 0, 0, 0.1)
+  box-shadow: inset 0px 1px 2px 0px rgba(255, 255, 255, 0.1), 0px 1px 2px 0px rgba(0, 0, 0, 0.1)
+  width: 36px
+  height: 32px
+  cursor: pointer
+  &:active
+    -webkit-box-shadow: inset 0px 0px 4px 0px rgba(0, 0, 0, 0.4), 0px 1px 2px 0px rgba(0, 0, 0, 0.1)
+    box-shadow: inset 0px 0px 4px 0px rgba(0, 0, 0, 0.4), 0px 1px 2px 0px rgba(0, 0, 0, 0.1)
+
+.inner
+  padding: 15px
+
+h1
+  background: #4c5a61
+  border-bottom: 1px solid #313f41
+  display: block
+  padding: 10px 15px
+  line-height: 34px
+  color: white
+  font-size: 16px
+  text-shadow: 0px 1px 0px #1e2427
+  filter: dropshadow(color=#1e2427, offx=0, offy=1)
+
+#todos 
+  float: left
+  width: 20%
+  height: 100%
+  -webkit-box-shadow: 1px 0px 2px 0px rgba(0, 0, 0, 0.3)
+  box-shadow: 1px 0px 2px 0px rgba(0, 0, 0, 0.3)
+  position: relative
+  z-index: 999
+
+em
+  float: left
+  color: rgba(0, 0, 0, 0.3)
+  line-height: 150%
+  font-weight: 400
+  font-size: 12px
+  text-align: center
+
+
+#map_canvas 
+  width: 80%
+  height: 100%
+  float: left
+
+
+#edit
+  color: #484848
+
+  li
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+    display: block
+    float: left
+    position: relative
+    width: 100%
+    padding: 15px 0
+    line-height: 16px
+
+    span
+      display: none
+
+.eventLocation
+  padding-left: 33px
+
+.tickOff 
+  position: absolute
+  top: 15px
+  left: 0
+  width: 16px
+  height: 16px
+  background-image: url(checkmark.png)
+  background-position: 0px 0px
+  cursor: pointer
+  &:hover
+    background-position: 0px 32px
+
+.done
+  text-decoration: line-through
+  color: #b5c1c7
+  
+  .tickOff
+    background-position: 0px 16px
+
+
+#clearLink, #clearDone
+  line-height: 34px
+  width: 47%
+  background: rgba(0, 0, 0, 0.1)
+  text-align: center
+  @include border-radius(2px)
+  margin: 15px 0
+  color: #828887
+
+
+#clearLink
+  float: left
+  &:hover
+    background: #cb837f
+    color: rgba(0, 0, 0, 0.4)
+
+#clearDone
+  float: right
+  &:hover
+    background: #b6cd6d
+    color: rgba(0, 0, 0, 0.4)
+
+.pac-container
+  margin-top: -1px
+  &:after
+    display: none
+
+
+.pac-item
+  background: white
+  line-height: 34px
+  color: #828887
+  padding: 0 10px
+  font-weight: 400
+  &:hover
+    background: rgba(0, 0, 0, 0.05)

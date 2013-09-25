@@ -1,0 +1,6 @@
+%ul#edit
+  - @places.each do |place|
+    %li{:class => ('done' if place.done?)}
+      %p.eventLocation 
+        = place.name
+      %a.tickOff
