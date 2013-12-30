@@ -15,10 +15,8 @@
     %input#place_name{:type => "text", :placeholder => "Add location"}
     %section
       = render "places/index"
-    %a#clearLink{:href => "#"}
-      Clear all
-    %a#clearDone{:href => "#"}
-      Clear done
+    = link_to('Clear all', clear_all_path, :method => 'post', :id => 'clearLink')
+    = link_to('Clear done', clear_done_path, :method => 'post', :id => 'clearDone')
     %em
       Search for places you'd like to go, add them to your list and we'll remember them next time you visit.
 
