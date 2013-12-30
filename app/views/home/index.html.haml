@@ -4,14 +4,12 @@
     %div
       Signed in as
       = current_user.name
+      %li= link_to('Logout', destroy_user_session_path, :method => 'delete')
   - else
     %li= link_to('Login', new_user_session_path)
     %li= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2)
   #settings
   .inner
-    -# = form_for(:place, :remote => true) do |f|
-    -#   = f.hidden_field :session_id
-    -#   = f.text_field :name, :placeholder => "Add location"
     %input#place_name{:type => "text", :placeholder => "Add location"}
     %section
       = render "places/index"
@@ -22,6 +20,5 @@
 
 #map_canvas
 
-%script{:type => "text/javascript",
-    :src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyAhA2lQUp1m0vfXRCUXQcAJgKaiC99mwwQ&sensor=false&libraries=places"}
+%script{:type => "text/javascript", :src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyAhA2lQUp1m0vfXRCUXQcAJgKaiC99mwwQ&sensor=false&libraries=places"}
 
