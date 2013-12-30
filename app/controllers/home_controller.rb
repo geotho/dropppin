@@ -1,8 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @places = Place.all
-    @places.each do |place|
-      puts place.name
-    end
+    @places = user_signed_in? ?
+        current_user.places.where(cleared: false) : Place.none
   end
 end
