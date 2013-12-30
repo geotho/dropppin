@@ -1,0 +1,5 @@
+%li.place{:class => ('done' if place.done?),
+    :data => {:lat => place.lat, :lng => place.lng, :id => place.id}}
+  %p.eventLocation= place.name
+  %a.tickOff{:href => "/places/#{place.id}",
+      :data => {:remote => 'true', :method => 'put'}}
