@@ -11,18 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131226151425) do
+ActiveRecord::Schema.define(version: 20131229173818) do
 
   create_table "places", force: true do |t|
     t.string   "name"
     t.string   "reference"
     t.integer  "user_id"
-    t.boolean  "done",                                           default: false, null: false
+    t.boolean  "done",                   default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.decimal  "lat",                    precision: 8, scale: 6
     t.decimal  "lng",                    precision: 9, scale: 6
     t.string   "address",    limit: nil
+    t.boolean  "cleared"                 default: false, null: false
   end
 
   add_index "places", ["user_id"], name: "index_places_on_user_id"
